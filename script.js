@@ -31,7 +31,7 @@ let timer;
 let isPlaying = false;
 let sentenceCount = 0;
 let history = JSON.parse(localStorage.getItem('history')) || [];
-history.reverse();
+
 
 function startGame() {
   resetGame();
@@ -115,7 +115,7 @@ function updateHistory(wpm) {
 }
 
 function renderHistory() {
-    let recentHistory = history.reverse().slice(0, 5);
+    let recentHistory = history.reverse().slice(0, 4);
 
     historyList.innerHTML = recentHistory.map(item => {
       return `<li>WPM: ${item.wpm}, Time: ${item.time}s, Sentence: "${item.sentence}"</li>`;
@@ -135,5 +135,17 @@ function resetGame() {
 
 startBtn.addEventListener('click', startGame);
 typingArea.addEventListener('input', calculateResults);
+
+
+function checkLocalStorage() {
+    if (typeof(Storage) !== "undefined") {
+        console.log("Local Storage Found")
+    } else {
+        alert("Your browser does not support Local Storage. Please use a modern browser.");
+    }
+}
+
+checkLocalStorage();
+
 
 renderHistory();
