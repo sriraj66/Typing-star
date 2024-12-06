@@ -106,7 +106,7 @@ function endGame() {
     calculateResults(); 
     updateHistory(parseInt(wpmDisplay.textContent));  
   
-    alert('Stop!!! Time is up!');
+    alert('Stop!, Time is up! Click Restart to Type Again');
   
   }
 
