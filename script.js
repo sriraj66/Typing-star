@@ -8,31 +8,27 @@ const timeSelect = document.getElementById('time-select');
 const historyList = document.getElementById('history-list');
 
 const textSamples = [
-    "Just a little collection from my camera roll!",
-    "Memories captured, moments cherished.",
-    "The little things that make life beautiful!",
-    "Life in pictures—no filter needed!",
-    "filename of the current document without its extensions.",
-    "zero-index based line number.",
-    "The quick brown fox jumps over the lazy dog.",
-    "JavaScript is a versatile programming language.",
-    "HTML and CSS are essential for web development.",
-    "Typing games help improve your speed and accuracy.",
-    "Practice makes perfect in the art of typing.",
-    "Live life to the fullest and make every moment count.",
-    "JavaScript is a versatile programming language.",
-    "HTML and CSS are essential for web development.",
-    "Typing games help improve your speed and accuracy.",
-    "Snapshots of my everyday adventures!",
-    "Just a little collection from my camera roll!",
-    "Memories captured, moments cherished.",
-    "The quick brown fox jumps over the lazy dog.",
-    "Practice makes perfect in the art of typing.",
-    "Live life to the fullest and make every moment count.",
-    "Snapshots of my everyday adventures!",
-    "transform would appear inside a snippet body.",
-    "A basic snippet that places a variable into script with the $ prefix."
+    "Just a little collection from my camera roll! Memories captured, moments cherished. The little things that make life beautiful! Life in pictures—no filter needed. Filename of the current document without its extensions. The quick brown fox jumps over the lazy dog. Practice makes perfect in the art of typing.",
+
+    "JavaScript is a versatile programming language. HTML and CSS are essential for web development. Typing games help improve your speed and accuracy. Snapshots of my everyday adventures! Just a little collection from my camera roll! Memories captured, moments cherished. The quick brown fox jumps over the lazy dog.",
+
+    "Live life to the fullest and make every moment count. JavaScript is a versatile programming language. HTML and CSS are essential for web development. Typing games help improve your speed and accuracy. Practice makes perfect in the art of typing. Snapshots of my everyday adventures! Just a little collection.",
+
+    "Life in pictures—no filter needed. Filename of the current document without its extensions. Zero-index based line number. The quick brown fox jumps over the lazy dog. Practice makes perfect in the art of typing. Live life to the fullest and make every moment count. Snapshots of my everyday adventures.",
+
+    "Transform would appear inside a snippet body. A basic snippet that places a variable into script with the $ prefix. Just a little collection from my camera roll! Memories captured, moments cherished. The quick brown fox jumps over the lazy dog. JavaScript is a versatile programming language.",
+
+    "HTML and CSS are essential for web development. Typing games help improve your speed and accuracy. Snapshots of my everyday adventures! Just a little collection from my camera roll! Memories captured, moments cherished. The quick brown fox jumps over the lazy dog. Live life to the fullest and make every moment count.",
+
+    "The quick brown fox jumps over the lazy dog. Practice makes perfect in the art of typing. Live life to the fullest and make every moment count. Snapshots of my everyday adventures! Transform would appear inside a snippet body. A basic snippet that places a variable into script with the $ prefix.",
+
+    "Life in pictures—no filter needed. Filename of the current document without its extensions. Zero-index based line number. JavaScript is a versatile programming language. HTML and CSS are essential for web development. Typing games help improve your speed and accuracy. Practice makes perfect in the art of typing.",
+
+    "Just a little collection from my camera roll! Memories captured, moments cherished. The little things that make life beautiful! Life in pictures—no filter needed. Filename of the current document without its extensions. Zero-index based line number. The quick brown fox jumps over the lazy dog. JavaScript is a versatile.",
+
+    "HTML and CSS are essential for web development. Typing games help improve your speed and accuracy. Snapshots of my everyday adventures! Just a little collection from my camera roll! Memories captured, moments cherished. The quick brown fox jumps over the lazy dog. Live life to the fullest and make every moment count."
 ];
+
 
 let selectedText = "";
 let timeLeft = 60;
