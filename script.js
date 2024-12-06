@@ -12,7 +12,17 @@ const textSamples = [
   "JavaScript is a versatile programming language.",
   "HTML and CSS are essential for web development.",
   "Typing games help improve your speed and accuracy.",
-  "Practice makes perfect in the art of typing."
+    "Practice makes perfect in the art of typing.",
+  "Live life to the fullest and make every moment count.",
+    "Snapshots of my everyday adventures!",
+    "Just a little collection from my camera roll!",
+    "Memories captured, moments cherished.",
+    "The little things that make life beautiful!",
+    "Life in pictures—no filter needed!",
+    "filename of the current document without its extensions.",
+    "zero-index based line number.",
+    "transform would appear inside a snippet body.",
+    "A basic snippet that places a variable into script with the $ prefix."
 ];
 
 let selectedText = "";
