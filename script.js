@@ -92,7 +92,7 @@ function calculateResults() {
   if (typedText === selectedText) {
     sentenceCount++;
     const timeTaken = parseInt(timeSelect.value) - timeLeft;
-    history.push({ sentence: selectedText, wpm: wpm, time: timeTaken });
+    history.push({ sentence: selectedText, wpm: wpm, time: timeTaken,acc : accuracy });
     localStorage.setItem('history', JSON.stringify(history));
     loadNextSentence();
     typingArea.value = ''; 
@@ -118,7 +118,7 @@ function renderHistory() {
     let recentHistory = history.reverse().slice(0, 4);
 
     historyList.innerHTML = recentHistory.map(item => {
-      return `<li>WPM: ${item.wpm}, Time: ${item.time}s, Sentence: "${item.sentence}"</li>`;
+      return `<li>WPM: ${item.wpm}, Time: ${item.time}s, Accuracy: ${item.acc}%</li>`;
     }).join('');
 }
 
