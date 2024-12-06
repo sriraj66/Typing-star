@@ -8,7 +8,6 @@ const timeSelect = document.getElementById('time-select');
 const historyList = document.getElementById('history-list');
 
 const textSamples = [
-
     "Just a little collection from my camera roll!",
     "Memories captured, moments cherished.",
     "The little things that make life beautiful!",
@@ -41,7 +40,6 @@ let timer;
 let isPlaying = false;
 let sentenceCount = 0;
 let history = JSON.parse(localStorage.getItem('history')) || [];
-
 
 function startGame() {
     resetGame();
@@ -123,25 +121,34 @@ function endGame() {
     updateHistory(parseInt(wpmDisplay.textContent));
 
     alert('Stop!, Time is up! Click Restart to Type Again');
-
 }
 
 function updateHistory(wpm) {
+    // Push the new record into the history array
+    const newRecord = {
+        sentence: selectedText,
+        wpm: wpm,
+        time: parseInt(timeSelect.value) - timeLeft,
+        acc: accuracyDisplay.textContent
+    };
+
+    history.push(newRecord);
+
+    // Save the updated history back to localStorage
+    localStorage.setItem('history', JSON.stringify(history));
+
+    // Render the updated history
     renderHistory();
 }
 
 function renderHistory() {
+    // Get the most recent 4 entries
     let recentHistory = history.reverse().slice(0, 4);
 
+    // Render each history entry in the history list
     historyList.innerHTML = recentHistory.map(item => {
         return `<li>WPM: ${item.wpm}, Time: ${item.time}s, Accuracy: ${item.acc}%</li>`;
     }).join('');
-    if (startBtn.classList.contains("animate__headShake")) {
-        startBtn.classList.remove("animate__headShake")
-    } else {
-        startBtn.classList.add("animate__headShake")
-
-    }
 }
 
 function resetGame() {
@@ -158,9 +165,8 @@ function resetGame() {
 startBtn.addEventListener('click', startGame);
 typingArea.addEventListener('input', calculateResults);
 
-
 function checkLocalStorage() {
-    if (typeof (Storage) !== "undefined") {
+    if (typeof(Storage) !== "undefined") {
         console.log("Local Storage Found")
     } else {
         alert("Your browser does not support Local Storage. Please use a modern browser.");
@@ -169,5 +175,5 @@ function checkLocalStorage() {
 
 checkLocalStorage();
 
-
+// Render the history on page load
 renderHistory();
